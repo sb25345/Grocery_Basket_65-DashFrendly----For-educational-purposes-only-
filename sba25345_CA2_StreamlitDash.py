@@ -3,6 +3,13 @@ import pandas as pd
 
 st.set_page_config(page_title="Easy Grocery Helper", layout="wide")
 
+st.markdown("""
+<style>
+    .stApp { background-color: #f8f9fa; }
+    h1, h2, h3 { color: #1f77b4; }
+</style>
+""", unsafe_allow_html=True)
+
 st.title("🛒 Easy Smart Grocery Helper")
 st.markdown("**Big clear text • Simple navigation • Made for adults 65+**")
 
@@ -20,6 +27,7 @@ def load_data():
 long_df = load_data()
 
 if long_df.empty:
+    st.error("Data file not found.")
     st.stop()
 
 # Top products
@@ -42,7 +50,7 @@ elif page == "Often Bought Together":
 
     selected = st.selectbox("Choose a product:", top_products.index.tolist())
 
-    # Real rules (you can expand this)
+    # Real rules (can be expanded in future)
     rules = {
         "Organic Whole Strawberries": ["Banana", "Organic Blueberries", "Greek Yogurt", "Organic Whole Milk"],
         "Organic Bakery Hamburger Buns Wheat - 8 CT": ["Organic Original Hommus", "Grapefruit Sparkling Water"],
