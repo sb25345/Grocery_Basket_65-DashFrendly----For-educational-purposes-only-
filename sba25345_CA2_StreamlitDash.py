@@ -3,13 +3,6 @@ import pandas as pd
 
 st.set_page_config(page_title="Easy Grocery Helper", layout="wide")
 
-st.markdown("""
-<style>
-    .stApp { background-color: #f8f9fa; }
-    h1, h2, h3 { color: #1f77b4; }
-</style>
-""", unsafe_allow_html=True)
-
 st.title("🛒 Easy Smart Grocery Helper")
 st.markdown("**Big clear text • Simple navigation • Made for adults 65+**")
 
